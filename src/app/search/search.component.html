@@ -13,10 +13,10 @@
       </form> -->
       <div class="card mb-9" style="max-width: 540px;">
             <div class="row no-gutters">
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <img src="http://anastasionico.uk/img/blog/git-and-github.jpeg" class="card-img" alt=" GitHub Image ">
               </div>
-              <div class="col-md-8">
+              <div class="col-md-6">
                 <div class="card-body">
                   <!-- <h5 class="card-title">Card title</h5> -->
                   <p class="card-text">Fill in Your GitHub Username in This Form And Get The Number of Followers , and those you follow. Your Location and The Number of Repositories You have and Their Descriptions</p>
@@ -26,19 +26,27 @@
             <form class="form-inline">
                     <div class="form-group mx-sm-3 mb-2">
                             <label for="inputUsername" class="sr-only">Enter GitHub Username</label>
-                            <input type="username" class="form-control" id="inputUsername" placeholder="Username">
+                           User Name: <input type="username" class="form-control" id="inputUsername" placeholder="Username" [(ngModel)]="userName" name="user">
                           </div>
-                          <button type="submit" class="btn btn-primary mb-2">Search</button>
+                          
+                          <button (click)="search()"type="submit" class="btn btn-primary mb-2">Search</button>
                         </form>
             
-        </div>
-          </div>
+        
 
-<div class="row">
-        <p class="mb-0">Username: {{user.login}}</p>
-        <p class="mb-0">Number Of Followers: {{user.followers}}</p>
-        <p class="mb-0">Number Of Followings: {{user.following}}</p>
-        <p class="mb-0">Location: {{user.location}}</p>
-        <p class="mb-0">Number Of Repositories: {{user.repos}}</p>
-        <p class="mb-0">Number Of Public Repos: {{user.public-repos}}</p>
-    </div>
+<div *ngIf="response"> 
+      <h4> Username: {{response.login}}</h4>
+       <img src="{{response.avatar_url}}">
+        
+         <h4> Followers: {{response.followers}}</h4>
+      
+        <h4>  Followings: {{response.following}}</h4>
+    
+        <h4> Location: {{response.location}}</h4>
+      
+        <h4> Repositories: {{response.public_repos}}</h4>
+        
+     </div>
+  </div>
+</div>
+<footer class="blockfooter-footer">Julia Agasaro@2019</footer>

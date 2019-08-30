@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../user-class/user';
 import { UserRequestService } from '../user-http/user-request.service';
 import { environment } from '../../environments/environment';
+import { Repository } from '../repository'
 
 @Component({
   selector: 'app-search',
@@ -10,38 +11,25 @@ import { environment } from '../../environments/environment';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  // user:User;
-userName: string ;
+users:User;
+userName: string = "" ;
 response: any;
-  // constructor( private userService:UserRequestService) { }
-  // userName = "";
-  // githubData: any = "";
-  // imgavatarUrl = "./assets/avatar.png";
-  constructor(private http: HttpClient) { }
-  // constructor( private userService:UserRequestService) { }
-  // searchUser() {
+Repository: Repository[];
 
-    // this.http.get("https://api.github.com/users/" + this.userName + "?access_token=" + environment.access_token)
-    //   .subscribe(
-  //       (response: Response) => {
-  //         const user = response.json();
-  //         this.githubData = user;
-          
-  //         this.imgavatarUrl = user.avatar_url;
-  //       }
-  //     )
-  // }
+  constructor(private http: HttpClient,private name:UserRequestService) { }
+  
 
 
     ngOnInit() {
-    //  
+  
   }
-  search(){
-    this.http.get('https://api.github.com/users/'+ this.userName)
-     .subscribe((response)=>{
-       this.response = response;
-       console.log(this.response);
-     })
-  }
-
+  
+  funcsearch(){
+  this.name.userRequest(this.userName);
+  this.users=this.name.user;
+  
+  this.name.userRepoRequest(this.userName);
+  this.Repository=this.name.myrepo
+  console.log(this.users);
+}
 }

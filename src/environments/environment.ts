@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl:"https://api.github.com/users/Eliane-5?access_token=c49e82eb4f40f56ec2b5be70f27f982db4616743"
-// access_token:"c49e82eb4f40f56ec2b5be70f27f982db4616743"
+  apiUrl:"c49e82eb4f40f56ec2b5be70f27f982db4616743"
+  // access_token:"c49e82eb4f40f56ec2b5be70f27f982db4616743"
 };
 
 /*
@@ -16,3 +16,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+//localhost:4200/http://localhost:4200/http://localhost:4200/http://localhost:4200/http://localhost:4200/http://localhost:4200/http://localhost:4200/http://localhost:4200/http://localhost:4200/http://localhost:4200/http://localhost:4200/

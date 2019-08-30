@@ -8,7 +8,7 @@ import { User } from '../user-class/user';
 export class UserRequestService {
   user: User;
   constructor(private http:HttpClient) { 
-    this.user = new User("","",0,0,"",0,0);
+    this.user = new User("","",0,0,"",0);
   }
   userRequest(){
     interface ApiResponse{
@@ -17,7 +17,6 @@ export class UserRequestService {
       followers:number;
       following:number;
       location:string;
-      repos:number;
       public_repos:number;
     }
     let promise = new Promise((resolve,reject)=>{
@@ -27,7 +26,7 @@ export class UserRequestService {
         this.user.followers = response.followers
         this.user.following = response.following
         this.user.location = response.location
-        this.user.repos = response.repos
+        this.user.public_repos = response.public_repos
         resolve()
       },
       error=>{

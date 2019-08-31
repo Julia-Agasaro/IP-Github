@@ -20,7 +20,7 @@
     <div class="card">
       <div class="card-body">
         <div *ngIf="users"> 
-            <h4> Username: {{users.login}}</h4>
+            <h4 class="user"appHighlight> Username: {{users.login}}</h4>
             <img src="{{users.avatar_url}}">
 
             <h4> Followers: {{users.followers}}</h4>
@@ -33,16 +33,16 @@
             
          </div>
             <br><br>
-            <p class="text-center" id="font-weight-bolder">List of your Repository Names And Their Descriptions:</p>
+            <p  class="font-weight-bolder">List of your Repository Names And Their Descriptions:</p>
             <br><br>
             <div *ngFor= 'let r of Repository'>
             
              <h4 class="repo"> {{r.name}} </h4> <br> 
-              <h4 class="description">{{r.description}} </h4>
+              <h4 class="description"appHighlight>{{r.description}} </h4>
             </div>
       </div>
     </div>
-   cd</div>
+   </div>
 </div>
 
 <footer class="blockfooter-footer">Julia Agasaro@2019</footer>

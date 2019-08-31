@@ -1,43 +1,48 @@
-<div class="card mb-9" style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-6">
-      <img src="http://anastasionico.uk/img/blog/git-and-github.jpeg" class="card-img" alt=" GitHub Image ">
-    </div>
-    <div class="col-md-6">
-      <div class="card-body">
-        <!-- <h5 class="card-title">Card title</h5> -->
-        <p class="card-text">Fill in Your GitHub Username in This Form And Get The Number of Followers , and those you follow. Your Location and The Number of Repositories You have and Their Descriptions</p>
+<div style='background: black' class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <img src="http://anastasionico.uk/img/blog/git-and-github.jpeg" class="card-img" alt="...">
+           <div class="card-body">
+              <p class="card-text">Fill in Your GitHub Username in This Form And Get The Number of Followers , and those you follow. Your Location and The Number of Repositories You have and Their Descriptions</p>
+        
+                <form class="form-inline">
+                  <div class="form-group mx-sm-3 mb-2">
+                    <label for="inputUsername" class="sr-only">Enter GitHub Username</label>
+                   User Name: <input type="username" class="form-control" id="inputUsername" placeholder="Username" [(ngModel)]="userName" name="user">
+                   </div>
+                  
+                  <button (click)="funcsearch()"type="submit" class="btn btn-primary mb-2">Search</button>
+                </form>
+           </div>
       </div>
     </div>
-  
-  <form class="form-inline">
-          <div class="form-group mx-sm-3 mb-2">
-                  <label for="inputUsername" class="sr-only">Enter GitHub Username</label>
-                 User Name: <input type="username" class="form-control" id="inputUsername" placeholder="Username" [(ngModel)]="userName" name="user">
-                </div>
-                
-                <button (click)="funcsearch()"type="submit" class="btn btn-primary mb-2">Search</button>
-              </form>
-  
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <div *ngIf="users"> 
+            <h4> Username: {{users.login}}</h4>
+            <img src="{{users.avatar_url}}">
 
-
-<div> 
-<h4> Username: {{users.login}}</h4>
-<img src="{{users.avatar_url}}">
-
-<h4> Followers: {{users.followers}}</h4>
-
-<h4>  Followings: {{users.following}}</h4>
-
-<h4> Location: {{users.location}}</h4>
-
-<h4> Repositories: {{users.public_repos}}</h4>
-
+            <h4> Followers: {{users.followers}}</h4>
+            
+            <h4>  Followings: {{users.following}}</h4>
+            
+            <h4> Location: {{users.location}}</h4>
+            
+            <h4> Repositories: {{users.public_repos}}</h4>
+            
+         </div>
+            <br><br>
+            <p class="text-center" id="font-weight-bolder">List of your Repository Names And Their Descriptions:</p>
+            <br><br>
+            <div *ngFor= 'let r of Repository'>
+            
+             <h4 class="repo"> {{r.name}} </h4> <br> 
+              <h4 class="description">{{r.description}} </h4>
+            </div>
+      </div>
+    </div>
+   cd</div>
 </div>
-<div *ngFor= 'let r of Repository'>
 
-  {{r.name}} <br> {{r.description}}
-</div>
-</div>
-</div>
 <footer class="blockfooter-footer">Julia Agasaro@2019</footer>

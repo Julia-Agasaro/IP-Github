@@ -36,9 +36,10 @@
             <p  class="font-weight-bolder">List of your Repository Names And Their Descriptions:</p>
             <br><br>
             <div *ngFor= 'let r of Repository'>
-            
+             <div class="rep"> 
              <h4 class="repo"> {{r.name}} </h4> <br> 
               <h4 class="description"appHighlight>{{r.description}} </h4>
+            </div>
             </div>
       </div>
     </div>

@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchComponent } from './search/search.component';
-import {FormsModule} from '@angular/forms'
+import {FormsModule} from '@angular/forms';
+import { HighlightDirective } from './highlight.directive';
+import { UppercasePipe } from './uppercase.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
     SearchComponent,
+    HighlightDirective,
+    UppercasePipe,
+   
     
   ],
   imports: [

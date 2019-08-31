@@ -57,6 +57,7 @@ let promise = new Promise((resolve,reject)=>{
     },
     error => {
       this.user.login = "Please Reload the page";
+      
       reject(error);
     })
   });

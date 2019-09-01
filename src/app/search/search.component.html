@@ -1,48 +1,24 @@
-<div style='background: black' class="row">
+<div style='background:gray' class="row">
     <div class="col-sm-6">
       <div class="card">
         <img src="http://anastasionico.uk/img/blog/git-and-github.jpeg" class="card-img" alt="...">
-           <div class="card-body">
-              <p class="card-text">Fill in Your GitHub Username in This Form And Get The Number of Followers , and those you follow. Your Location and The Number of Repositories You have and Their Descriptions</p>
-        
-                <form class="form-inline">
-                  <div class="form-group mx-sm-3 mb-2">
-                    <label for="inputUsername" class="sr-only">Enter GitHub Username</label>
-                   User Name: <input type="username" class="form-control" id="inputUsername" placeholder="Username" [(ngModel)]="userName" name="user">
-                   </div>
-                  
-                  <button (click)="funcsearch()"type="submit" class="btn btn-primary mb-2">Search</button>
-                </form>
-           </div>
+           
       </div>
     </div>
-  <!-- <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <div *ngIf="users"> 
-            <h4 class="user"appHighlight> Username: {{users.login}}</h4>
-            <img src="{{users.avatar_url}}">
-
-            <h4> Followers: {{users.followers}}</h4>
-            
-            <h4>  Followings: {{users.following}}</h4>
-            
-            <h4> Location: {{users.location}}</h4>
-            
-            <h4> Repositories: {{users.public_repos}}</h4>
-            
-         </div> -->
-            <br><br>
-            <!-- <p  class="font-weight-bolder">List of your Repository Names And Their Descriptions:</p>
-            <br><br>
-            <div *ngFor= 'let r of Repository'>
-             <div class="rep"> 
-             <h4 class="repo"> {{r.name}} </h4> <br> 
-              <h4 class="description"appHighlight>{{r.description}} </h4>
-            </div>
-            </div> -->
-      </div>
-   <div class="row">
+  <div class="col-sm-6">
+    <div class="card-body">
+       <p class="card-text">Fill in Your GitHub Username in This Form And Get The Number of Followers , and those you follow. Your Location and The Number of Repositories You have and Their Descriptions</p>
+         <form class="form-inline">
+             <div class="form-group mx-sm-3 mb-2">
+                <label for="inputUsername" class="sr-only">Enter GitHub Username</label>
+                   User Name: <input type="username" class="form-control" id="inputUsername" placeholder="Username" [(ngModel)]="userName" name="user">
+             </div>
+                  <button (click)="funcsearch()"type="submit" class="btn btn-primary mb-2">Search</button>
+         </form>
+    </div>
+  </div>
+</div>
+<div class="row">
     <div class="col-md-6">
       <div class="table table-striped table-bordered">
         <h3> {{users.login}}</h3>
@@ -51,7 +27,6 @@
           <tr>
             <th scope="row">Github Username:</th>
               <td> <h3> {{users.login}}</h3></td>
-
           </tr>
           <tr>
             <th scope="row">Repositories:</th>
@@ -62,11 +37,11 @@
             <td>{{users.followers}}</td>
           </tr>
           <tr>
-            <th scope="row">Following</th>
+            <th scope="row">Following:</th>
             <td>{{users.following}}</td>
           </tr>
           <tr>
-            <th scope="row">location</th>
+            <th scope="row">location:</th>
             <td> {{users.location}}</td>
           </tr>
           </tbody>
@@ -80,7 +55,7 @@
 <div class="container">
   <div class="row">
     <div  class="col-md-12">
-      <h2 style="color: #056b5b" > User Repositories</h2>
+      <h2 style="color: gray" > User Repositories:</h2>
       <div class="table table-striped">
         <table class="table">
           <tbody>

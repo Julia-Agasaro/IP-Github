@@ -8,16 +8,3 @@ footer{
     color: black;
     text-align: center;
 }
-.rep{
-    border: solid 1px black;
-}
-.repo{
-    /* text-decoration-line: underline; */
-    text-transform: uppercase;
-    font-size: 20px;
-}
-.description{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    
-}
